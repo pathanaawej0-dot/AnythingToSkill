@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  /* Foundation */
+  --color-background: oklch(0.08 0.02 260);
+  --color-surface: oklch(0.12 0.02 260);
+  --color-ink: oklch(0.96 0.01 260);
+  --color-muted: oklch(0.60 0.02 260);
+
+  /* Brand */
+  --color-primary: oklch(0.55 0.20 260);
+  --color-accent: oklch(0.55 0.20 260);
+
+  /* Typography */
+  --font-sans: 'Satoshi', 'Inter', system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+
+  /* Effects */
+  --radius-xl: 12px;
+  --radius-lg: 8px;
+  --shadow-soft: 0 10px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
+}
+
+:root {
+  --background: oklch(0.08 0.02 260);
+  --foreground: oklch(0.96 0.01 260);
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap');
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+@layer base {
+  *, ::before, ::after {
+    border-color: oklch(0.15 0.02 260);
+  }
+}
+
+.glass-nav {
+  background: oklch(0.08 0.02 260 / 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid oklch(0.15 0.02 260);
+}
